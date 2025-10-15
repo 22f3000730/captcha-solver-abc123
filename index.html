@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captcha Solver</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; }
+        #captchaImage { max-width: 100%; height: auto; }
+        #result { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Captcha Solver</h1>
+    <p>Enter the captcha image URL below:</p>
+    <input type="text" id="urlInput" value="https://captcha.com/images/captcha/botdetect3-captcha-meltingheat.jpg" />
+    <button id="solveBtn">Solve Captcha</button>
+    <div id="captchaContainer" style="margin-top: 20px;">
+        <img id="captchaImage" src="" alt="Captcha Image"/>
+    </div>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('solveBtn').addEventListener('click', function() {
+            const url = document.getElementById('urlInput').value;
+            document.getElementById('captchaImage').src = url;
+            setTimeout(() => {
+                // Simulating captcha solving
+                const solvedText = 'SOLVED_TEXT';  // Placeholder for the solved captcha text
+                document.getElementById('result').innerText = `Solved Captcha Text: ${solvedText}`;
+            }, 15000); // 15 seconds delay
+        });
+    </script>
+</body>
+</html>
